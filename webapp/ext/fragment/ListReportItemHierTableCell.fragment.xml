@@ -1,0 +1,11 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="CentralPurchaseContractHierTableCellFragment" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:smartLink="sap.ui.comp.navpopover">
+	<Link id="CentralPurchaseContractItemLHierink" text="{CentralPurchaseContractItem}" emphasized="true" press="OnPressHierCentralItemLink"/>
+	<Link id="CentralPurchaseContractHierLink" text="{ActivePurchasingDocument}" emphasized="true" press="OnPressHierCentralLink"/>
+	<Link id="FormattedPurchaseContractItemHierLink" text="{FormattedPurchaseContractItem}" emphasized="true" press="OnPressHierCentralItemLink"/>
+</core:FragmentDefinition>

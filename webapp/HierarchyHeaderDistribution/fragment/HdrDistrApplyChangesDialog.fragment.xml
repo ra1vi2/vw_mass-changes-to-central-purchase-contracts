@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="HierHdrDistApplyChangesFragment" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:smartForm="sap.ui.comp.smartform" displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%">
+	<Dialog id="HierHdrDistApplyChangesDialog" type="Message" title="{dialog>/dialogTitle}">
+		<content id="HierHdrDistApplyChangesDialogContent">
+			<VBox id="HierHdrDistApplyChangesDialogBox" class="sapUiSmallMargin">
+			
+				<Text id="HierHdrDistApplyChangesDialogConfirmation" text="{dialog>/Confirmation}"/>
+				<Text id="HierHdrDistApplyChangesDialogTxt"/>
+				<Text id="HierHdrDistApplyChangesDialogmassJobDescription" text="{dialog>/JobDescription}"/>
+				<TextArea id="HierHdrDistApplyChangesDialogmassChangeJobCommentBox" ariaLabelledBy="confirmationDialogText"
+					value="{dialog>/CommentBox}" width="100%" liveChange="onJobDescriptionChange" maxLength="120" ></TextArea>
+			</VBox>
+				<smartForm:SmartForm id="smartFormCanvasHierHdrDistribution" editable="true" entityType="C_CPurConHierHdrDistrMassUpdtType">
+				<smartForm:Group id="SmartFormCanvasHierHdrDistributionGroup">
+					<smartForm:GroupElement id="CanvasHierHdrPurchasingDocVersionReasonCodeGroupElement">
+						<smartField:SmartField value="{PurchasingDocVersionReasonCode}" editable="true" id="CanvasHierHdrPurchasingDocVersionReasonCode"
+							change="validateReasonCode"/>
+					</smartForm:GroupElement>
+						<smartForm:GroupElement id="CanvasHierHdrPurgDocNoteTextElement">
+						<TextArea id="CanvasHierHdrPurgDocNoteText" rows= "5" value="{PurgDocNoteText}" maxLength="5000" showExceededText="true" liveChange="validatePurchaserNote"></TextArea>
+					</smartForm:GroupElement>
+				</smartForm:Group>
+			
+			</smartForm:SmartForm>
+		</content>
+		<buttons id="HierHdrDistApplyChangesDialogButtons">
+			<Button type="Emphasized" text="{dialog>/Button}" press="onSubmitChnges" id="CanvasHierHdrupdateJobConfirmationBtn"></Button>
+			<Button text="{@i18n>cancelButtonText}" press="onPressCancelButton" id="CanvasHierHdrcancelButton"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

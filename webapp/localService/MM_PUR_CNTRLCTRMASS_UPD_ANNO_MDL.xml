@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/mm_pur_cntrlctrmass_updt_srv/$metadata"><edmx:Include Namespace="MM_PUR_CNTRLCTRMASS_UPDT_SRV" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="mm_pur_cntrlctrmass_upd_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/CntrlPurContrItmDistrPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/CntrlPurContrGRConsumptionPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ReferenceHeaderDistributionKey"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/LogicalSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingDocumentCategoryName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubPurgOrgName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubCompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubPlantName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/StorageLocationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingDocumentTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/Supplier"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingOrganization"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/CntrlPurContrOvrlDistrStsTxt"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingProcessingStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingDocumentStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ValidityEndDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ValidityStartDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchaseContractType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/Material"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/MaterialGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProductType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/InternalComment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingDocInclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurchasingDocExclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurOrdItemsAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/PurOrdHeadersAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ContrHdrDistrIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/TextIsDeleted"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubPurchasingOrg"><Annotation Term="Common.SemanticObject" String="PurchasingOrganization"/>
+				<Annotation Term="Common.Text" Path="ProcmtHubPurgOrgName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubCompanyCode"><Annotation Term="Common.SemanticObject" String="CompanyCode"/>
+				<Annotation Term="Common.Text" Path="ProcmtHubCompanyCodeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/Plant"><Annotation Term="Common.SemanticObject" String="Plant"/>
+				<Annotation Term="Common.Text" Path="ProcmtHubPlantName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/StorageLocation"><Annotation Term="Common.SemanticObject" String="StorageLocation"/>
+				<Annotation Term="Common.Text" Path="StorageLocationName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubPurchasingGroup"><Annotation Term="Common.SemanticObject" String="PurchasingGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType/ProcmtHubPurgDocItmCategory">
+				<Annotation Term="Common.Text" Path="PurchasingDocumentCategoryName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHdrDistrType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurgDocItmCategory"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrDistributionPct"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurchasingOrg"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocation"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/FormattedPurchaseContractItem"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/MaterialDescription"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/TargetQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurgDocReleaseOrderQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ContractNetPriceAmount"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/DocumentCurrency"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/NetPriceQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CntrlPurContrItmTargetAmount"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/NoDaysReminder1"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/NoDaysReminder2"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/NoDaysReminder3"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/SupplierConfirmationControlKey"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurgDocOrderAcknNumber"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/RequirementTracking"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/SupplierMaterialNumber"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/IsOrderAcknRqd"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingPriceIsEstimated"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PriceIsToBePrinted"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/UnderdelivTolrtdLmtRatioInPct"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/OverdelivTolrtdLmtRatioInPct"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/UnlimitedOverdeliveryIsAllowed"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/StockType"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/TaxCode"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ShippingInstruction"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/IsInfoAtRegistration"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/GoodsReceiptIsExpected"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/GoodsReceiptIsNonValuated"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/InvoiceIsExpected"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/InvoiceIsGoodsReceiptBased"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/EvaldRcptSettlmtIsAllowed"><Annotation Term="UI.HiddenFilter"/></Annotations><Annotations/>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/to_ConfirmationControlVH"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/to_MaterialGroupValueHelp"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/to_ProductTypeHelp"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/to_SchedAgrmtMassUpdtStkTypeVH"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/to_ShipInstructionValueHelp"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingDocumentTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ProductTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/MaterialGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/OrderQuantityUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/OrderPriceUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/SupplierConfControlKeyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/DomainText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ShippingInstructionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingOrganizationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/SupplierName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/Currency"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CurrencyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ItemDistributionStatusName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/DocumentStatusName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CreatedByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/UserDescription"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CreationDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/IsEndOfPurposeBlocked"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PaymentTermsName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/IncotermsClassificationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/IncotermsVersionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ContrItemIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingContractDeletionCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingDocVersionReasonText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/InternalComment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingDocInclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchasingDocExclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurOrdItemsAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurOrdHeadersAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchaseContractType_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/CentralPurchaseContractItem"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContractItem"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/MaterialGroup"><Annotation Term="Common.SemanticObject" String="MaterialGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/Material"><Annotation Term="Common.SemanticObject" String="Material"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurchaseContractType">
+				<Annotation Term="Common.Text" Path="PurchasingDocumentTypeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType/PurgDocProductType">
+				<Annotation Term="Common.Text" Path="ProductTypeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurgDocProductType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MaterialGroup"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Material"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TargetQuantity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ContractNetPriceAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NetPriceQuantity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrItmTargetAmount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Supplier</PropertyPath>
+						<PropertyPath>PurchasingOrganization</PropertyPath>
+						<PropertyPath>PurchasingGroup</PropertyPath>
+						<PropertyPath>CompanyCode</PropertyPath>
+						<PropertyPath>ProcmtHubCompanyCode</PropertyPath>
+						<PropertyPath>PurchasingProcessingStatus</PropertyPath>
+						<PropertyPath>Material</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingDocumentTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingOrganizationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/CompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/SupplierName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/CurrencyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/DocumentStatusName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/CreatedByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PaymentTermsName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/IncotermsClassificationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/IncotermsVersionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/ContrHdrIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingDocumentDeletionCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingDocVersionReasonText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchaseContractType_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingOrganization"><Annotation Term="Common.SemanticObject" String="PurchasingOrganization"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingGroup"><Annotation Term="Common.SemanticObject" String="PurchasingGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/CompanyCode"><Annotation Term="Common.SemanticObject" String="CompanyCode"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/Supplier"><Annotation Term="Common.SemanticObject" String="Supplier"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType/PurchasingDocumentStatus">
+				<Annotation Term="Common.Text" Path="DocumentStatusName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseContractType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidityStartDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidityEndDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseContractTargetAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemDistributionStatusName"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CntrlPurContrItmDistrPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CntrlPurContrGRConsumptionPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ReferenceHeaderDistributionKey"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchaseOrderQuantityUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/LogicalSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingDocumentCategoryName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/Language"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurgDocDistributionTypeDesc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurOrdItemPlantName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/MKT_AgreementTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ComparisonPurchasingOrgName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ComparisonPurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/StorageLocationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/Supplier"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingOrganization"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CntrlPurContrOvrlDistrStsTxt"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingProcessingStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingDocumentStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ValidityEndDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ValidityStartDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchaseContractType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/Material"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/MaterialGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ProductType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/InternalComment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingDocInclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurchasingDocExclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/PurOrdItemsAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ContrItmDistrIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/TextIsDeleted"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/CentralPurchaseContractItem"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContractItem"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ProcmtHubCompanyCode"><Annotation Term="Common.SemanticObject" String="CompanyCode"/>
+				<Annotation Term="Common.Text" Path="CompanyCodeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/Plant"><Annotation Term="Common.SemanticObject" String="Plant"/>
+				<Annotation Term="Common.Text" Path="PurOrdItemPlantName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ProcmtHubPurchasingOrg"><Annotation Term="Common.SemanticObject" String="PurchasingOrganization"/>
+				<Annotation Term="Common.Text" Path="ComparisonPurchasingOrgName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ProcmtHubPurchasingGroup"><Annotation Term="Common.SemanticObject" String="PurchasingGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/StorageLocation"><Annotation Term="Common.SemanticObject" String="StorageLocation"/>
+				<Annotation Term="Common.Text" Path="StorageLocationName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType/ProcmtHubPurgDocItmCategory">
+				<Annotation Term="Common.Text" Path="PurchasingDocumentCategoryName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrItmDistrType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrDistributionLevel"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurgDocItmCategory"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrDistributionPct"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurchasingOrg"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocation"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrMaterialVHType/OpnCtlgItemID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrMaterialVHType/Language"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrMaterialVHType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrMaterialVHType/OpnCtlgWebServiceID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrMaterialVHType/IsBusinessPurposeCompleted"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/CntrlPurContrItmDistrPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/CntrlPurContrGRConsumptionPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ReferenceHeaderDistributionKey"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/LogicalSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingDocumentCategoryName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubPurgOrgName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubCoCodeGroupingName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubCompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubPlantName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/StorageLocationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingDocumentTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/Supplier"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingOrganization"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/CntrlPurContrOvrlDistrStsTxt"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingProcessingStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingDocumentStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ValidityEndDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ValidityStartDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchaseContractType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/Material"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/MaterialGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProductType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/InternalComment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingDocInclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurchasingDocExclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurOrdItemsAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/PurOrdHeadersAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ContrHdrDistrIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/TextIsDeleted"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubPurchasingOrg"><Annotation Term="Common.SemanticObject" String="PurchasingOrganization"/>
+				<Annotation Term="Common.Text" Path="ProcmtHubPurgOrgName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubCompanyCode"><Annotation Term="Common.SemanticObject" String="CompanyCode"/>
+				<Annotation Term="Common.Text" Path="ProcmtHubCompanyCodeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/Plant"><Annotation Term="Common.SemanticObject" String="Plant"/>
+				<Annotation Term="Common.Text" Path="ProcmtHubPlantName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/StorageLocation"><Annotation Term="Common.SemanticObject" String="StorageLocation"/>
+				<Annotation Term="Common.Text" Path="StorageLocationName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubPurchasingGroup"><Annotation Term="Common.SemanticObject" String="PurchasingGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubPurgDocItmCategory">
+				<Annotation Term="Common.Text" Path="PurchasingDocumentCategoryName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType/ProcmtHubCompanyCodeGroupingID">
+				<Annotation Term="Common.Text" Path="ProcmtHubCoCodeGroupingName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierHdrDistrMassUpdtType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurgDocItmCategory"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrDistributionPct"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurchasingOrg"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCodeGroupingID"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocation"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CntrlPurContrItmDistrPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CntrlPurContrGRConsumptionPct"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ReferenceHeaderDistributionKey"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchaseOrderQuantityUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/LogicalSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingDocumentCategoryName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/Language"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurgDocDistributionTypeDesc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurOrdItemPlantName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/MKT_AgreementTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ComparisonPurchasingOrgName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ComparisonPurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/StorageLocationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/Supplier"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingOrganization"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CntrlPurContrOvrlDistrStsTxt"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingProcessingStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingDocumentStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ValidityEndDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ValidityStartDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchaseContractType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/Material"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/MaterialGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurgDocProductType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/InternalComment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingDocInclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurchasingDocExclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/PurOrdItemsAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ContrItmDistrIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/TextIsDeleted"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/CentralPurchaseContractItem"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContractItem"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ProcmtHubCompanyCode"><Annotation Term="Common.SemanticObject" String="CompanyCode"/>
+				<Annotation Term="Common.Text" Path="CompanyCodeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/Plant"><Annotation Term="Common.SemanticObject" String="Plant"/>
+				<Annotation Term="Common.Text" Path="PurOrdItemPlantName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ProcmtHubPurchasingOrg"><Annotation Term="Common.SemanticObject" String="PurchasingOrganization"/>
+				<Annotation Term="Common.Text" Path="ComparisonPurchasingOrgName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ProcmtHubPurchasingGroup"><Annotation Term="Common.SemanticObject" String="PurchasingGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/StorageLocation"><Annotation Term="Common.SemanticObject" String="StorageLocation"/>
+				<Annotation Term="Common.Text" Path="StorageLocationName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ProcmtHubPurgDocItmCategory">
+				<Annotation Term="Common.Text" Path="PurchasingDocumentCategoryName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType/ProcmtHubCompanyCodeGroupingID">
+				<Annotation Term="Common.Text" Path="ProcmtHubCompanyCodeGroupingID_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CPurConHierItmDistrMassUpdtType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrDistributionLevel"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCodeGroupingID_Text"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurgDocItmCategory"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrDistributionPct"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCodeGroupingID"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCode"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubPurchasingOrg"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocation"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_MaterialValueHelpType/MaterialBaseUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/SortField"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/FirstName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/LastName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/OrganizationBPName1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/OrganizationBPName2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/OrganizationBPName3"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/OrganizationBPName4"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/AuthorizationGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType/SupplierAccountGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_MM_SupplierValueHelpType">
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="adr">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="country" Path="Country"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Communication.Address" Qualifier="pref">
+					<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="country" Path="Country"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubCntrlContrPurgGrpVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubCompanyCodeVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPlantVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductGroupVHType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductGroupVHType/AuthorizationGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductGroupVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubProductGroup"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductTypeType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MaterialType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductVHType/PrmtHbIsUKMSEnabled"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductVHType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubProductVHType/MaterialAuthorizationGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPurgGroupVHType/EmailAddress"><Annotation Term="Communication.IsEmailAddress"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPurgGroupVHType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPurgGroupVHType">
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record><PropertyValue Property="address" Path="EmailAddress"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPurgOrgVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubSchedgAgrmtTypeVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubSchedgAgrmtTypeVHType/LogicalSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubStorageLocationVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurchasingGroupValueHelpType/EmailAddress"><Annotation Term="Communication.IsEmailAddress"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurchasingGroupValueHelpType">
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record><PropertyValue Property="address" Path="EmailAddress"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/FormattedPurchaseContractItem"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/MaterialDescription"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/TargetQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurgDocReleaseOrderQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ContractNetPriceAmount"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/DocumentCurrency"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/NetPriceQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CntrlPurContrItmTargetAmount"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/NoDaysReminder1"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/NoDaysReminder2"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/NoDaysReminder3"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/SupplierConfirmationControlKey"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurgDocOrderAcknNumber"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/RequirementTracking"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/SupplierMaterialNumber"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/IsOrderAcknRqd"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurgDocEstimatedPrice"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PriceIsToBePrinted"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/UnderdelivTolrtdLmtRatioInPct"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/OverdelivTolrtdLmtRatioInPct"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/UnlimitedOverdeliveryIsAllowed"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/StockType"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/TaxCode"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ShippingInstruction"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/IsInfoAtRegistration"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/GoodsReceiptIsExpected"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/GoodsReceiptIsNonValuated"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/InvoiceIsExpected"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/InvoiceIsGoodsReceiptBased"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/EvaldRcptSettlmtIsAllowed"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/to_ConfirmationControlVH"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/to_MaterialGroupValueHelp"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/to_Mm_Shipinstructionvaluehelp"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/to_ProductTypeHelp"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/to_SchedAgrmtMassUpdtStkTypeVH"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingDocumentTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ProductTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/MaterialGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/OrderQuantityUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/OrderPriceUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/SupplierConfControlKeyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/DomainText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ShippingInstructionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingOrganizationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/SupplierName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/Currency"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CurrencyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ItemDistributionStatusName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/DocumentStatusName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CreatedByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/UserDescription"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CreationDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/IsEndOfPurposeBlocked"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PaymentTermsName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/IncotermsClassificationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/IncotermsVersionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ContrItemIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingContractDeletionCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingDocVersionReasonText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ReleaseDateTime"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/InternalComment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingDocInclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchasingDocExclusionList"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurOrdItemsAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurOrdHeadersAreSelected"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/CentralPurchaseContractItem"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContractItem"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/MaterialGroup"><Annotation Term="Common.SemanticObject" String="MaterialGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/Material"><Annotation Term="Common.SemanticObject" String="Material"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/PurchaseContractType">
+				<Annotation Term="Common.Text" Path="PurchasingDocumentTypeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType/ProductType">
+				<Annotation Term="Common.Text" Path="ProductTypeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProductType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MaterialGroup"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Material"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TargetQuantity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ContractNetPriceAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NetPriceQuantity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CntrlPurContrItmTargetAmount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Supplier</PropertyPath>
+						<PropertyPath>PurchasingOrganization</PropertyPath>
+						<PropertyPath>PurchasingGroup</PropertyPath>
+						<PropertyPath>CompanyCode</PropertyPath>
+						<PropertyPath>ProcmtHubCompanyCode</PropertyPath>
+						<PropertyPath>PurchasingProcessingStatus</PropertyPath>
+						<PropertyPath>Material</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/CentralPurchaseContract"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingDocumentTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingOrganizationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/CompanyCodeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/SupplierName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/CurrencyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/DocumentStatusName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/CreatedByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PaymentTermsName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/IncotermsClassificationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/IncotermsVersionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/ContrHdrIsCreated"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingDocumentDeletionCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingDocVersionReasonText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/ActivePurchasingDocument"><Annotation Term="Common.SemanticObject" String="CentralPurchaseContract"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingOrganization"><Annotation Term="Common.SemanticObject" String="PurchasingOrganization"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingGroup"><Annotation Term="Common.SemanticObject" String="PurchasingGroup"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/CompanyCode"><Annotation Term="Common.SemanticObject" String="CompanyCode"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/Supplier"><Annotation Term="Common.SemanticObject" String="Supplier"/></Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType/PurchasingDocumentStatus">
+				<Annotation Term="Common.Text" Path="DocumentStatusName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseContractType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidityStartDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidityEndDate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseContractTargetAmount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemDistributionStatusName"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.I_ProcmtHubCompanyCodeGroupType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCompanyCodeGroupingID"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProcmtHubCoCodeGroupingName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

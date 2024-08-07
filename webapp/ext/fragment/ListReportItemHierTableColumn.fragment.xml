@@ -1,0 +1,30 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="CentralPurchaseContractHierTableColumnFragment" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="CentralPurchaseContractHierItemColumn" visible="false">
+		<Text id="CentralPurchaseContractHierItemText" text="{@i18n>Item}" tooltip="{@i18n>CentralCtrItem}"/>
+		<customData>
+			<core:CustomData id="CentralPurchaseContractHierItemCustomData" key="p13nData"
+				value='\{"columnKey": "CentralPurchaseContractItem", "leadingProperty":"CentralPurchaseContractItem","sortProperty":"CentralPurchaseContractItem","filterProperty":"CentralPurchaseContractItem"}'/>
+		</customData>
+	</Column>
+	<Column id="CentralPurchaseContractHierColumn" visible="false">
+		<Text id="CentralPurchaseContractHierText" text="{/#C_CntrlPurContrHierItmMassUpdtType/CentralPurchaseContract/@sap:label}"
+			tooltip="{/#C_CntrlPurContrHierItmMassUpdtType/CentralPurchaseContract/@sap:label}"/>
+		<customData>
+			<core:CustomData id="CentralPurchaseContractHierCustomData" key="p13nData"
+				value='\{"columnKey": "ActivePurchasingDocument", "leadingProperty":"ActivePurchasingDocument","sortProperty":"ActivePurchasingDocument","filterProperty":"ActivePurchasingDocument"}'/>
+		</customData>
+	</Column>
+	<Column id="FormattedPurchaseContractHierItemColumn" visible="true">
+		<Text id="FormattedPurchaseContractHierItemText" text="{@i18n>FormattedPurchaseHierContractItem}"
+			tooltip="{@i18n>FormattedPurchaseHierContractItem}"/>
+		<customData>
+			<core:CustomData id="FormattedPurchaseContractHierItemCustomData" key="p13nData"
+				value='\{"columnKey": "FormattedPurchaseContractItem", "leadingProperty":"FormattedPurchaseContractItem","sortProperty":"FormattedPurchaseContractItem","columnIndex":0}'/>
+		</customData>
+	</Column>
+</core:FragmentDefinition>

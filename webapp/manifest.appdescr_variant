@@ -1,0 +1,52 @@
+{
+	"fileName": "manifest",
+	"layer": "VENDOR",
+	"fileType": "appdescr_variant",
+	"reference": "ui.s2p.mm.cntrl.ctrmass.update",
+	"id": "vwks.nlp.s2p.mm.pctrcentral.mass.change",
+	"namespace": "apps/ui.s2p.mm.cntrl.ctrmass.update/appVariants/vwks.nlp.s2p.mm.pctrcentral.mass.change/",
+	"version": "1.0.0",
+	"content": [
+		{
+			"changeType": "appdescr_app_setTitle",
+			"content": {},
+			"texts": {
+				"i18n": "i18n/i18n.properties"
+			}
+		},
+		{
+			"changeType": "appdescr_ui5_addNewModelEnhanceWith",
+			"content": {
+				"modelId": "i18n|sap.suite.ui.generic.template.ListReport|C_PurCntrlContrItmMassUpdt"
+			},
+			"texts": {
+				"i18n": "i18n/ListReport/C_PurCntrlContrItmMassUpdt/i18n.properties"
+			}
+		},
+		{
+			"changeType": "appdescr_fiori_setRegistrationIds",
+			"content": {
+				"registrationIds": [
+					"F3792"
+				]
+			}
+		},
+		{
+			"changeType": "appdescr_app_setAch",
+			"content": {
+				"ach": "MM-FIO-PUR-SQ-CON"
+			}
+		},
+        {
+            "changeType": "appdescr_app_addNewInbound",
+            "content": {
+                "inbound": {
+                    "Supplier": {
+                        "semanticObject": "CentralPurchaseContract",
+                        "action": "changeMultiple"
+                    }
+                }
+            }
+        }
+	]
+}

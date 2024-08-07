@@ -1,0 +1,85 @@
+{
+	"_version": "1.11.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "ui.s2p.mm.cntrl.ctrmass.update.HierarchyHeaderDistribution",
+		"type": "component",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "CA-UI5-ST",
+		"offline": false,
+		"resources": "resources.json",
+		"embeddedBy": ""
+	},
+
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"flexEnabled": true,
+		"rootView": {
+			"viewName": "ui.s2p.mm.cntrl.ctrmass.update.HierarchyHeaderDistribution.view.HeaderDistribution",
+			"id": "_IDEGen_HeaderDistribution",
+			"type": "XML"
+		},
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {
+					"lazy": false
+				},
+				"sap.ui.comp": {
+					"lazy": false
+				},
+				"sap.uxap": {
+					"lazy": false
+				},
+				"sap.ui.generic.app": {},
+				"sap.suite.ui.generic.template": {},
+				"sap.ui.layout": {
+					"lazy": false
+				},
+				"sap.f": {
+					"lazy": false
+				},
+				"sap.ushell": {
+					"lazy": false
+				},
+				"sap.collaboration": {
+					"lazy": false
+				},
+				"sap.ui.table": {
+					"lazy": false
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "../HierarchyHeaderDistribution/i18n/i18n.properties"
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+
+	"sap.fiori": {
+		"registrationIds": ["F3792"],
+		"archeType": "transactional"
+	}
+}

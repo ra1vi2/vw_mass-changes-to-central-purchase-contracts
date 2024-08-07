@@ -1,0 +1,13 @@
+{
+  "application": "ui.s2p.mm.cntrl.ctrmass.update",
+  "version": "9.1.2",
+  "buildNumber": "51",
+  "buildId": "51",
+  "branch": "detached",
+  "revision": "bdf9965d756dce5842b08f88bb55392cdab7fbe0",
+  "GitURL": "",
+  "buildStatus": "${fiori.buildStatus}",
+  "translationComplete": "${fiori.translationComplete}",
+  "cidi": "${fiori.cidi}",
+  "cfdCM": "${fiori.cfdCM}"
+}

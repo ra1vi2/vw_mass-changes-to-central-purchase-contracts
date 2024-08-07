@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/sap/MM_PUR_CNTRLCTRMASS_UPDT_SRV/$metadata">
+		<edmx:Include Alias="MM_PUR_CNTRLCTRMASS_UPDT_SRV" Namespace="MM_PUR_CNTRLCTRMASS_UPDT_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ui.s2p.mm.cntrl.ctrmass.update.MM_PUR_CNTRLCTRMASS_UPDT_SRV">
+			<!--===============================================================================
+                Entity Type from chosen collection 
+                ================================================================================-->
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrMassUpdtType">
+				<Annotation Term="UI.SelectionPresentationVariant" Qualifier="PurchaseContracts">
+					<Record Type="UI.SelectionPresentationVariantType">
+						<PropertyValue Property="Text" String="{@i18n&gt;PurchaseContractHeadersText}"/>
+						<PropertyValue Property="SelectionVariant"/>
+						<PropertyValue Property="PresentationVariant"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_PurCntrlContrItmMassUpdtType">
+				<Annotation Term="UI.SelectionPresentationVariant" Qualifier="PurchaseContractItems">
+					<Record Type="UI.SelectionPresentationVariantType">
+						<PropertyValue Property="Text" String="{@i18n&gt;PurchaseContractItemsText}"/>
+						<PropertyValue Property="SelectionVariant"/>
+						<PropertyValue Property="PresentationVariant"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierMassUpdtType">
+				<Annotation Term="UI.SelectionPresentationVariant" Qualifier="HierPurchaseContracts">
+					<Record Type="UI.SelectionPresentationVariantType">
+						<PropertyValue Property="Text" String="{@i18n&gt;CentralHierarchyContractHeaders}"/>
+						<PropertyValue Property="SelectionVariant"/>
+						<PropertyValue Property="PresentationVariant"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_CntrlPurContrHierItmMassUpdtType">
+				<Annotation Term="UI.SelectionPresentationVariant" Qualifier="HierPurchaseContractItems">
+					<Record Type="UI.SelectionPresentationVariantType">
+						<PropertyValue Property="Text" String="{@i18n&gt;CentralHierarchyContractItems}"/>
+						<PropertyValue Property="SelectionVariant"/>
+						<PropertyValue Property="PresentationVariant"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.I_CntrlPurContrDistrStatusVHType/PurchasingDocumentStatus">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="PurchasingDocumentStatusName"/>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPurgOrgVHType/ProcurementHubSourceSystem">
+				<Annotation Term="UI.HiddenFilter" Bool="false"/>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubSchedgAgrmtTypeVHType/ProcurementHubSourceSystem">
+				<Annotation Term="UI.HiddenFilter" Bool="false"/>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubPlantVHType/ProcurementHubSourceSystem">
+				<Annotation Term="UI.HiddenFilter" Bool="false"/>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubCntrlContrPurgGrpVHType/ProcurementHubSourceSystem">
+				<Annotation Term="UI.HiddenFilter" Bool="false"/>
+			</Annotations>
+			<Annotations Target="MM_PUR_CNTRLCTRMASS_UPDT_SRV.C_ProcmtHubStorageLocationVHType/ProcurementHubSourceSystem">
+				<Annotation Term="UI.HiddenFilter" Bool="false"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

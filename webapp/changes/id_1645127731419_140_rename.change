@@ -1,0 +1,40 @@
+{
+	"fileName": "id_1645127731419_140_rename",
+	"fileType": "change",
+	"changeType": "rename",
+	"moduleName": "",
+	"reference": "vwks.nlp.s2p.mm.pctrcentral.mass.change",
+	"packageName": "$TMP",
+	"content": {
+		"originalControlType": "sap.m.Button"
+	},
+	"selector": {
+		"id": "ui.s2p.mm.cntrl.ctrmass.update::sap.suite.ui.generic.template.ListReport.view.ListReport::C_PurCntrlContrItmMassUpdt--id-1645126870794-129",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {
+		"newText": {
+			"value": "{i18n|sap.suite.ui.generic.template.ListReport|C_PurCntrlContrItmMassUpdt>UploadCentralGroupContracts}",
+			"type": "XBUT"
+		}
+	},
+	"namespace": "apps/ui.s2p.mm.cntrl.ctrmass.update/appVariants/vwks.nlp.s2p.mm.pctrcentral.mass.change/changes/",
+	"projectId": "vwks.nlp.s2p.mm.pctrcentral.mass.change",
+	"creation": "2022-02-17T19:55:32.180Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "sap.ui.rta.command",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.96.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "rename"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

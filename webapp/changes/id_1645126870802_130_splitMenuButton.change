@@ -1,0 +1,50 @@
+{
+	"fileName": "id_1645126870802_130_splitMenuButton",
+	"fileType": "change",
+	"changeType": "splitMenuButton",
+	"moduleName": "",
+	"reference": "vwks.nlp.s2p.mm.pctrcentral.mass.change",
+	"packageName": "$TMP",
+	"content": {
+		"sourceSelector": {
+			"id": "uploadBtn",
+			"idIsLocal": false
+		},
+		"newElementIds": [{
+			"id": "ui.s2p.mm.cntrl.ctrmass.update::sap.suite.ui.generic.template.ListReport.view.ListReport::C_PurCntrlContrItmMassUpdt--id-1645126870794-128",
+			"idIsLocal": false
+		}, {
+			"id": "ui.s2p.mm.cntrl.ctrmass.update::sap.suite.ui.generic.template.ListReport.view.ListReport::C_PurCntrlContrItmMassUpdt--id-1645126870794-129",
+			"idIsLocal": false
+		}]
+	},
+	"selector": {
+		"id": "ui.s2p.mm.cntrl.ctrmass.update::sap.suite.ui.generic.template.ListReport.view.ListReport::C_PurCntrlContrItmMassUpdt--template:::ListReportPage:::DynamicPageTitle",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ui.s2p.mm.cntrl.ctrmass.update/appVariants/vwks.nlp.s2p.mm.pctrcentral.mass.change/changes/",
+	"projectId": "vwks.nlp.s2p.mm.pctrcentral.mass.change",
+	"creation": "2022-02-17T19:41:14.098Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "sap.ui.rta.command",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.96.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "split"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {
+		"sourceControl": {
+			"id": "uploadBtn",
+			"idIsLocal": false
+		}
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

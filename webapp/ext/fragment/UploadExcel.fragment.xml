@@ -1,0 +1,28 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="UploadExcelFragment" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"  displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	 xmlns:l="sap.ui.layout"
+ height="100%">
+
+		<u:FileUploader
+			id="fileUploader"
+			fileType="xlsx"
+			multiple="false"
+			enabled="true"
+			buttonOnly="true"
+			buttonText="{@i18n>ActionExcelUpload}"
+			uploadUrl= "/sap/opu/odata/sap/MM_PUR_CNTRLCTRMASS_UPDT_SRV/PurCntrlContrUploadExcelSet"
+			sendXHR="true"
+			change=".ExcelOperations.fnChangeUploadFiles"
+			uploadStart=".ExcelOperations.fnBeforeUpload"
+			uploadComplete=".ExcelOperations.fnUploadComplete"
+			sameFilenameAllowed="true"
+			typeMissmatch=".ExcelOperations.fnFileTypeMissmatch"
+			fileEmpty=".ExcelOperations.fnEmptyFileSelected"
+			useMultipart= "false"/>
+
+</core:FragmentDefinition>

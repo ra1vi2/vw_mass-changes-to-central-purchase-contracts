@@ -1,0 +1,87 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield"
+	id="AddHCTRItemDistFrag" xmlns:smartForm="sap.ui.comp.smartform" xmlns:layout="sap.ui.layout">
+	<Dialog id="AddHCTRItemDistribution" title="{i18n>AddHCTRItemDist}" resizable="true" visible="true" class="sapUiPopupWithPadding"
+		contentWidth="70%">
+		<content id="AddItemDistributionContent">
+			<VBox id="AddHCTRItemDistributionVBox" class="sapUiSmallMarginBegin">
+				<Label id="AffectedDocumentItemsLabel" text="{@i18n>ToBeAffectedDocumentsItems}" labelFor="selectedHCTRItemCount"/>
+				<Text id="selectedHCTRItemCount"/>
+			</VBox>
+			<smartForm:SmartForm id="smartFormHCTRItemDistribution" editable="true" entityType="C_CPurConHierItmDistrMassUpdtType">
+				<smartForm:layout id="SmartFormHCTRItemDistributionLayout">
+					<smartForm:ColumnLayout id="SmartFormHCTRItemDistributionColumnLayout" columnsXL="2"/>
+				</smartForm:layout>
+				<smartForm:Group id="SmartFormItemDistributionGroup">
+					<smartForm:GroupElement id="ProcmtHubPurgDocItmCategoryHierGroupElements">
+						<smartField:SmartField mandatory="true" value="{ProcmtHubPurgDocItmCategory}" editable="true" id="ProcmtHubPurgDocItmCategory"
+							change=".AddHCTRDistribution.validateHCTRItmCategory"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="ProcmtHubCompanyCodeHierGroupElement">
+						<smartField:SmartField value="{ProcmtHubCompanyCode}" fetchValueListReadOnly="true" showSuggestion="true" editable="true" mandatory="true"
+							change=".AddHCTRDistribution.validateHCTRCompanyCode" id="ProcmtHubCompanyCode"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="ProcmtHubCompanyCodeGroupHierGroupElement">
+						<smartField:SmartField value="{ProcmtHubCompanyCodeGroupingID}" fetchValueListReadOnly="true" showSuggestion="true" editable="true"
+							id="ProcmtHubCompanyCodeGroupingID"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="ProcmtHubPurchasingOrgHierGroupElement">
+						<smartField:SmartField value="{ProcmtHubPurchasingOrg}" mandatory="true" change=".AddHCTRDistribution.validateHCTRPurchasingOrg"
+							id="ProcmtHubPurchasingOrg" editable="false"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="PlantHierGroupElement">
+						<smartField:SmartField value="{Plant}" editable="false"
+							mandatory="{ parts: [{ path: 'ProcmtHubPurgDocItmCategory' }], formatter: '.formatter.mandatePlant' }"
+							change=".AddHCTRDistribution.validateHCTRPlant" id="Plant"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="PaymentTermsHierGroupElement">
+						<smartField:SmartField value="{PaymentTerms}" editable="true" id="PaymentTerms" change=".AddHCTRDistribution.validateHCTRPaymentTerms"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="PurchasingDocVersionReasonCodeHierGroupElement">
+						<smartField:SmartField value="{PurchasingDocVersionReasonCode}" enabled="false" editable="true" id="PurchasingDocVersionReasonCode"
+							change=".AddHCTRDistribution.validateHCTRPurchasingDocVersionReasonCode"/>
+					</smartForm:GroupElement>
+				</smartForm:Group>
+				<smartForm:Group id="SmartForItemDistributionGroup2">
+					<smartForm:GroupElement id="PurchasingDocumentTypeHierGroupElement">
+						<smartField:SmartField value="{PurchasingDocumentType}" change=".AddHCTRDistribution.validateHCTRPurchasingDocumentType" editable="false"
+							id="PurchasingDocumentType" mandatory="true"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="CntrlPurContrDistributionPctHierGroupElement">
+						<smartField:SmartField value="{CntrlPurContrDistributionPct}" editable="true" mandatory="true"
+							change=".AddHCTRDistribution.validateHCTRDistributionPercentage" id="CntrlPurContrDistributionPct"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="ProcmtHubPurchasingGroupHierGroupElement">
+						<smartField:SmartField value="{ProcmtHubPurchasingGroup}" mandatory="true" change=".AddHCTRDistribution.validateHCTRPurchasingGrp"
+							editable="false" id="ProcmtHubPurchasingGroup"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="StorageLocationHierGroupElement">
+						<smartField:SmartField value="{StorageLocation}" change=".AddHCTRDistribution.validateHCTRStorageLocation" id="StorageLocation"
+							editable="false"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="PurchasingInfoRecordUpdateCodeHierGroupElement">
+						<smartField:SmartField value="{PurchasingInfoRecordUpdateCode}" editable="true" id="PurchasingInfoRecordUpdateCode"
+							change=".AddHCTRDistribution.validateHCTRPurchasingInfoRecordUpdateCode"/>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="PurgDocNoteHierTextElement">
+						<TextArea id="PurgDocNoteText" enabled="false" value="{PurgDocNoteText}" maxLength="5000" showExceededText="true"
+							liveChange=".AddHCTRDistribution.validateHCTRPurchaserNote"></TextArea>
+					</smartForm:GroupElement>
+					<smartForm:GroupElement id="HierProcurementHubSourceSystem">
+						<smartField:SmartField value="{ProcurementHubSourceSystem}" enabled="false" id="ProcurementHubSourceSystem"/>
+					</smartForm:GroupElement>
+				</smartForm:Group>
+			</smartForm:SmartForm>
+		</content>
+		<buttons id="AddHCTRItemDistButtons">
+			<Button press="createApplyChangesPopUp" text="{i18n>applyChangesButtonText}" id="DialogApplyBtn" type="Emphasized" enabled="false"/>
+			<Button text="{@i18n>simulateJobButtonText}" press="createApplyChangesPopUp" id="DialogSimulateBtn" visible="false" enabled="false"></Button>				
+			<Button press=".AddHCTRDistribution.onCancelDialog" text="{i18n>cancelButtonText}" id="DialogCancelBtn" enabled="true"/>
+			<Button press=".AddHCTRDistribution.onReset" text="{i18n>restoreButtonText}" id="DialogResetBtn" enabled="false"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

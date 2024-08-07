@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="HierItemDistApplyChangesFragment" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:smartForm="sap.ui.comp.smartform" displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%">
+	<Dialog id="HierItmDistApplyChangesDialog" type="Message" title="{dialog>/dialogTitle}">
+		<content id="HierItmDistApplyChangesDialogContent">
+			<VBox id="HierItmDistApplyChangesDialogBox" class="sapUiSmallMargin">
+			
+				<Text id="HierItmDistApplyChangesDialogConfirmation" text="{dialog>/Confirmation}"/>
+				<Text id="HierItmDistApplyChangesDialogTxt"/>
+				<Text id="HierItmDistApplyChangesDialogmassJobDescription" text="{dialog>/JobDescription}"/>
+				<TextArea id="HierItmDistApplyChangesDialogmassChangeJobCommentBox" ariaLabelledBy="HierItmDistApplyChangesDialogConfirmation"
+					value="{dialog>/CommentBox}" width="100%" liveChange="onJobDescriptionChange"  maxLength="120"></TextArea>
+			</VBox>
+				<smartForm:SmartForm id="smartFormCanvasHierItmDistribution" editable="true" entityType="C_CPurConHierItmDistrMassUpdtType">
+				<smartForm:Group id="SmartFormCanvasHierItmDistributionGroup">
+					<smartForm:GroupElement id="CanvasItmPurchasingDocVersionReasonCodeGroupElement">
+						<smartField:SmartField value="{PurchasingDocVersionReasonCode}" editable="true" id="CanvasItmPurchasingDocVersionReasonCode"
+							change="validateReasonCode"/>
+					</smartForm:GroupElement>
+						<smartForm:GroupElement id="CanvasItmPurgDocNoteTextElement">
+						<TextArea id="CanvasItmPurgDocNoteText" rows= "5" value="{PurgDocNoteText}" maxLength="5000" showExceededText="true" liveChange="validatePurchaserNote"></TextArea>
+					</smartForm:GroupElement>
+				</smartForm:Group>
+			
+			</smartForm:SmartForm>
+		</content>
+		<buttons id="HierItmDistApplyChangesDialogButtons">
+			<Button type="Emphasized" text="{dialog>/Button}" press="onSubmitChnges" id="CanvasItmupdateJobConfirmationBtn"></Button>
+			<Button text="{@i18n>cancelButtonText}" press="onPressCancelButton" id="CanvasItmcancelButton"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

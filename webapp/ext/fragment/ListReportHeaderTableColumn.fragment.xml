@@ -1,0 +1,14 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+	<core:FragmentDefinition id="CentralPurchaseContractHeaderTableColumnFragment" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="CentralPurchaseContractHeaderColumn">
+		<Text id="CentralPurchaseContractHeaderText" text="{/#C_PurCntrlContrItmMassUpdtType/CentralPurchaseContract/@sap:label}" tooltip="{/#C_PurCntrlContrItmMassUpdtType/CentralPurchaseContract/@sap:label}"/>
+		<customData>
+			<core:CustomData id="CentralPurchaseContractHeaderCustomData" key="p13nData"
+				value='\{"columnKey": "ActivePurchasingDocument", "leadingProperty":"ActivePurchasingDocument","sortProperty":"ActivePurchasingDocument","columnIndex":0}'/>
+		</customData>
+	</Column>
+</core:FragmentDefinition>

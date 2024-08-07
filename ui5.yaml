@@ -1,0 +1,32 @@
+specVersion: '2.6'
+metadata:
+  name: ui.s2p.mm.cntrl.ctrmass.update
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: true
+        backend:
+          - path: /sap
+            url: http://n1t.onprem:1234
+            client: "100"
+            destination: n1t_100
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: ""
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: ui.s2p.mm.cntrl.ctrmass.update
+        ui5Theme: sap_fiori_3

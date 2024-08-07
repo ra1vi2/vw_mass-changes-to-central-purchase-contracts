@@ -1,0 +1,9 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core">
+	<smartfilterbar:ControlConfiguration id="selectionfield.CntrlPurContrFlxblDistrIsAllwd" key="CntrlPurContrFlxblDistrIsAllwd" controlType="dropDownList" 
+	    filterType="single" displayBehaviour="descriptionOnly"/>
+</core:FragmentDefinition>

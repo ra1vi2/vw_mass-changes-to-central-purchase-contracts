@@ -1,0 +1,163 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:grid="sap.ui.table"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:smartField="sap.ui.comp.smartfield"
+	controllerName="ui.s2p.mm.cntrl.ctrmass.update.HierarchyHeaderDistribution.controller.HeaderDistribution" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:smartForm="sap.ui.comp.smartform" xmlns:layout="sap.ui.layout" id="CentralPurchaseContractsHierHeaderDistributionView"  height="100%">
+	<App id="CentralPurchaseHierHdrContractsApp">
+		<pages id="CentralPurchaseHierHdrContracts">
+			<Page id="HierHdrGroup" floatingFooter="false" showHeader="false">
+				<smarttable:SmartTable id="HierHdrDistTable" entitySet="C_CPurConHierHdrDistrMassUpdt" tableType="ResponsiveTable" useExportToExcel="false"
+					useTablePersonalisation="false" customData:useSmartField="true" fieldChange="ValidateDist" showRowCount="true" enableAutoBinding="true"
+					header="{i18n>HeaderDistribution}" beforeRebindTable="onBeforeDocumentsTableRebind" class="sapUiResponsiveMargin"
+					customData:p13nDialogSettings='{filter:{visible:true}, group:{visible:true}, columns:{visible:true}}'
+					requestAtLeastFields="CentralPurchaseContract,CntrlPurContrFlxblDistrIsAllwd,CntrlPurContrItmDistrPct,PurgDocItemDistributionKey,ActivePurchasingDocument" demandPopin="true">
+					<Table id="ColumnHierHeadersTable" sticky="ColumnHeaders" growing="true" growingScrollToLoad="true"/>
+					<smarttable:customToolbar id="ColumnHierHeaderSmartTable">
+						<OverflowToolbar id="ColumnHierHeadersOverFlowToolbar">
+							<ToolbarSpacer id="ColumnHierHeaderToolbarSpacer" />
+							<SearchField id="HierHeaderSearchFld" search="HeaderfilterBarSearch" width="15rem"/>
+							<Button id="EditHierHdrDist" text="{i18n>Edit}" press="editHdrDist" type="Transparent"/>
+						</OverflowToolbar>
+					</smarttable:customToolbar>
+				</smarttable:SmartTable>
+				<grid:Table id="HierHdrDistMTable" visible="false" rows="{path: 'HdrDistModel>/modelData'}" enableGrouping="true" selectionMode="None"
+					visibleRowCountMode="Auto" rowHeight="35px">
+					<grid:extension id="HierHeaderDistributionExtension">
+						<Toolbar id="HierHdrtoolbarID">
+							<OverflowToolbar id="HierHdrOverflowToolBar" width="99%">
+								<Title id="TableHierHeader" level="H1" text="{i18n>HeaderDistribution}"/>
+								<ToolbarSpacer id="HierHeaderDistributionToolbarSpacer" />
+								<SearchField id="HierHdrSearchString" width="15rem"/>
+								<ToolbarSeparator id="HierHeaderDistributionToolbarSeparator" />
+								<Button id="EditHierHdrDistMtable" text="{i18n>Edit}"/>
+							</OverflowToolbar>
+						</Toolbar>
+					</grid:extension>
+					<grid:rowSettingsTemplate id="HierHeaderDistributionRowSettingsTemplate">
+						<grid:RowSettings id="HierHeaderDistributionRowSettings"
+							highlight="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' }, { path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' } ], formatter: '.formatter.fnTotalError' }"></grid:RowSettings>
+					</grid:rowSettingsTemplate>
+					<grid:columns fixedLayout="false">
+						<grid:Column id="HierHdrcentralContract" sortProperty="HeaderText" width="14rem">
+							<!--<Label id="CentralPurchHierHdrContractLabel" text="{i18n>CentralPurchContract}" tooltip="{i18n>CentralPurchContract}"/>Accessibility fixes-->
+							<Label id="CentralPurchHierHdrContractLabel" text="{i18n>CentralPurchContract}"/>
+							<grid:template id="CentralPurchHierHdrContractTemplate">
+								<HBox id="CentralPurchContractHierHdrHBox">
+									<ObjectStatus id="CentralPurchContractHierHdrObjectStatus" text="{ parts: [{ path: 'HdrDistModel>HeaderText' }]}" state="Success"
+										visible="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }], formatter: '.formatter.showTotalinGrpHdrColum' }"/>
+									<Label id="CentralPurchContractsHierHdrLabel" text="{i18n>nonflexText}"
+										design="{parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }], formatter: '.formatter.fnBoldTotalField' }"
+										visible="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }], formatter: '.formatter.showTotal' }"
+										class="sapUiSmallMarginTop"/>
+								</HBox>
+							</grid:template>
+						</grid:Column>
+						<grid:Column id="HierHdrPurDocCategoryColumn" width="12rem">
+							<!--<Label id="HierHdrPurDocCategoryLabel" text="{i18n>PurDocCategory}" tooltip="{i18n>PurDocCategory}"/>-->
+							<Label id="HierHdrPurDocCategoryLabel" text="{i18n>PurDocCategory}" />
+							<grid:template id="HierHdrPurDocCategoryTemplate">
+								<HBox id="HierHdrPurDocCategoryHBox">
+									<Text id="HierHdrPurDocCategoryText"
+										text="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>ProcmtHubPurgDocItmCategory' }, { path: 'HdrDistModel>PurchasingDocumentCategoryName' } ], formatter: '.formatter.fnconcatIdTextCat' }"
+										visible="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' },{path: 'HdrDistModel>GroupHeaderReference'}], formatter: '.formatter.showDocCat' }"/>
+								</HBox>
+							</grid:template>
+						</grid:Column>
+						<grid:Column id="CntrlPurContrHierHdrDistributionPctColumn" width="17rem">
+							<!--<Label id="CntrlPurContrHierHdrDistributionPctLabel" tooltip="{i18n>CntrlPurContrDistributionPct}" text="{i18n>CntrlPurContrDistributionPct}" textAlign="End" width="100%"/>-->
+							<Label id="CntrlPurContrHierHdrDistributionPctLabel" text="{i18n>CntrlPurContrDistributionPct}" textAlign="End" width="100%"/>
+							<grid:template id="CntrlPurContrHierHdrDistributionPctTemplate">
+								<HBox id="CntrlPurContrHierHdrDistributionPctHBox" justifyContent="End">
+									<HBox id="CntrlPurContrHierHdrHBox" justifyContent="End" width="30%">
+										<ObjectStatus id="CntrlPurContrHierHdrDistributionPctObjectStatus"
+											text="{parts: [{ path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' }], type: 'sap.ui.model.type.Float', formatter: '.formatter.fndecimal' }"
+											state="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' },{ path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' }], formatter: '.formatter.fnValueStateErrorDelta' }"
+											visible="{parts: [ {path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' }], formatter: '.formatter.fndecimalVisible' }"
+											class="sapUiSmallMarginTop sapUiTinyMarginEnd"/>
+									</HBox>
+									<HBox id="CntrlPurContrItmHierHdrDistrPctHBox" width="30%" justifyContent="End">
+										<Label id="CntrlPurContrItmHierHdrDistrPctLabel"
+											text="{parts: [{ path: 'HdrDistModel>CntrlPurContrItmDistrPct' }], type: 'sap.ui.model.type.Float', formatter: '.formatter.fndecimalwithpercent' }"
+											width="100%" textDirection="RTL" textAlign="End" class="sapUiSmallMarginTop sapUiTinyMarginEnd"
+											visible="{ parts: [{path: 'HdrDistModel>GroupHeaderReference'}], formatter: '.formatter.groupheaderVisible' }"
+											design="{parts: [{ path: 'HdrDistModel>ProcmtHubPurgDocItmCategory' }], type: 'sap.ui.model.type.Float', formatter: '.formatter.fnoldDistBold' }"/>
+									</HBox>
+									<HBox id="CntrlPurContrHierHdrDistributionHBox" width="40%" justifyContent="End">
+										<ObjectStatus id="CntrlPurContrHierHdrDistributionObjectStatus" textDirection="LTR" text="{parts: [{ path: 'HdrDistModel>CntrlPurContrDistributionPct' }], formatter: '.formatter.fndecimalLocalized' }"
+										 press="handlePopoverPress"
+											active="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' }, { path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' } ], formatter: '.formatter.fnPressActive' }"
+											state="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' }, { path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' } ], formatter: '.formatter.fnTotalError' }"
+											visible="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' },{ path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' },{ path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' }], formatter: '.formatter.fnToggleTotalFieldBoxVis' }"
+											class="sapUiSmallMarginTop"/>
+										<Input id="CntrlPurContrHierHdrDistributionInput" value="{HdrDistModel>CntrlPurContrDistributionPct}" ariaLabelledBy="CntrlPurContrHierHdrDistributionPctLabel"
+									
+										editable="true" width="100%" textAlign="Right" change="onChange"
+											visible="{parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' },{path: 'HdrDistModel>GroupHeaderReference'}], formatter: '.formatter.fnToggleTotalFieldBox2' }"
+											valueState="{parts: [{ path: 'HdrDistModel>CntrlPurContrDistributionPct' },{ path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' }], formatter: '.formatter.fnValidateInput' }"
+											valueStateText="{ parts: [{ path: 'HdrDistModel>CntrlPurContrDistributionPct' },{ path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' }], formatter: '.formatter.fnValueStateText'}"/>
+										<Label id="CntrlPurContrHierHdrDistributionLabel" class="sapUiSmallMarginTop"
+											visible="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>CntrlPurContrGRConsumptionPct' }, { path: 'HdrDistModel>CntrlPurContrFlxblDistrIsAllwd' } ], formatter: '.formatter.fnTotalBold' }"
+											text="{parts: [{ path: 'HdrDistModel>CntrlPurContrDistributionPct' }], formatter: '.formatter.fndecimalLocalized' }" vAlign="Middle" design="Bold"/>
+									</HBox>
+								</HBox>
+							</grid:template>
+						</grid:Column>
+						<grid:Column id="HierHdrProcmtHubPurchasingOrgColumn" width="auto">
+							<!--<Label id="HierHdrProcmtHubPurchasingOrgLabel" text="{i18n>ProcmtHubPurchasingOrg}" tooltip="{i18n>ProcmtHubPurchasingOrg}"/>-->
+							<Label id="HierHdrProcmtHubPurchasingOrgLabel" text="{i18n>ProcmtHubPurchasingOrg}"/>
+							<grid:template id="HierHdrProcmtHubPurchasingOrgTemplate">
+								<Text id="HierHdrProcmtHubPurchasingOrgText"
+									text="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>ProcmtHubPurchasingOrg' }, { path: 'HdrDistModel>ProcmtHubPurgOrgName' },{path: 'HdrDistModel>GroupHeaderReference'} ], formatter: '.formatter.fnconcatIdText' }"/>
+							</grid:template>
+						</grid:Column>
+						<grid:Column id="HierHdrProcmtHubCompanyCodeGroupingIDColumn" width="auto">
+							<!--<Label id="HierHdrProcmtHubCompanyCodeGroupingIDLabel" text="{i18n>ProcmtHubCompanyCodeGroupingID}" tooltip="{i18n>ProcmtHubCompanyCodeGroupingID}"/>-->
+							<Label id="HierHdrProcmtHubCompanyCodeGroupingIDLabel" text="{i18n>ProcmtHubCompanyCodeGroupingID}"/>
+							<grid:template id="HierHdrProcmtHubProcmtHubCompanyCodeGroupTemplate">
+								<Text id="HierHdrProcmtHubCompanyCodeGroupingIDText"
+									text="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>ProcmtHubCompanyCodeGroupingID' }, { path: 'HdrDistModel>ProcmtHubCoCodeGroupingName' },{path: 'HdrDistModel>GroupHeaderReference'} ], formatter: '.formatter.fnconcatIdText' }"/>
+							</grid:template>
+						</grid:Column>						
+						<grid:Column id="HierHdrProcmtHubCompanyCodeColumn" width="auto">
+							<!--<Label id="HierHdrProcmtHubCompanyCodeLabel" text="{i18n>ProcmtHubCompanyCode}" tooltip="{i18n>ProcmtHubCompanyCode}"/>-->
+							<Label id="HierHdrProcmtHubCompanyCodeLabel" text="{i18n>ProcmtHubCompanyCode}"/>
+							<grid:template id="HierHdrProcmtHubCompanyCodeTemplate">
+								<Text id="HierHdrProcmtHubCompanyCodeText"
+									text="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>ProcmtHubCompanyCode' }, { path: 'HdrDistModel>ProcmtHubCompanyCodeName' },{path: 'HdrDistModel>GroupHeaderReference'} ], formatter: '.formatter.fnconcatIdText' }"/>
+							</grid:template>
+						</grid:Column>
+						<grid:Column id="HierHdrPlantColumn" width="auto">
+							<!--<Label id="HierHdrPlantLabel" text="{i18n>Plant}" tooltip="{i18n>Plant}"/>-->
+							<Label id="HierHdrPlantLabel" text="{i18n>Plant}" />
+							<grid:template id="HierHdrPlantTemplate">
+								<Text id="HierHdrPlantText"
+									text="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>Plant' }, { path: 'HdrDistModel>ProcmtHubPlantName' },{path: 'HdrDistModel>GroupHeaderReference'} ], formatter: '.formatter.fnconcatIdText' }"/>
+							</grid:template>
+						</grid:Column>
+						<grid:Column id="HierHdrStorageLocationColumn" width="auto">
+							<!--<Label id="HierHdrStorageLocationLabel" text="{i18n>StorageLocation}" tooltip="{i18n>StorageLocation}"/>-->
+							<Label id="HierHdrStorageLocationLabel" text="{i18n>StorageLocation}"/>
+							<grid:template id="HierHdrStorageLocationTemplate">
+								<Text id="HierHdrStorageLocationText"
+									text="{ parts: [{ path: 'HdrDistModel>ReferenceHeaderDistributionKey' }, { path: 'HdrDistModel>StorageLocation' }, { path: 'HdrDistModel>StorageLocationName' } ,{path: 'HdrDistModel>GroupHeaderReference'}], formatter: '.formatter.fnconcatIdText' }"/>
+							</grid:template>
+						</grid:Column>
+					</grid:columns>
+				</grid:Table>
+				<footer id="HierHdrFooterButton">
+					<OverflowToolbar id="HierHdrOverFlowToolbarButton" >
+						<ToolbarSpacer id="HierHdrToolbarSpacerButton"/>
+						<Button press="ApplyChange" text="{i18n>Apply}" id="HierHdrApplyBtn" enabled="false" type="Emphasized"/>
+						<Button press="Simulate" text="{i18n>Simulate}" id="HierHdrSimulateBtn" enabled="false" visible="false"/>
+						<Button press="onCancel" text="{i18n>Cancel}" id="HierHdrCancelBtn" enabled="false"/>
+						<Button press="onReset" text="{i18n>Reset}" id="HierHdrResetBtn" enabled="false"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

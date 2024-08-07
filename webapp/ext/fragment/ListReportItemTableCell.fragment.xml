@@ -1,0 +1,13 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="CentralPurchaseContractTableCellFragment" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartLink="sap.ui.comp.navpopover">
+	<smartLink:SmartLink id="CentralPurchaseContractItemSmartLink" text="{CentralPurchaseContractItem}" semanticObject="CentralPurchaseContract" class="sapMTextNoWrap"
+	beforePopoverOpens="onBeforePopoverOpensForFormattedCTRItem" mapFieldToSemanticObject="false"></smartLink:SmartLink>
+	<smartLink:SmartLink id="CentralPurchaseContractSmartLink" text="{ActivePurchasingDocument}" semanticObject="CentralPurchaseContract" class="sapMTextNoWrap"
+		beforePopoverOpens="onBeforePopoverOpensForActivePurchasingDoc" mapFieldToSemanticObject="false"></smartLink:SmartLink>
+	<smartLink:SmartLink id="FormattedPurchaseContractItemSmartLink" text="{FormattedPurchaseContractItem}" semanticObject="CentralPurchaseContract" class="sapMTextNoWrap" emphasized="true"
+		beforePopoverOpens="onBeforePopoverOpensForFormattedCTRItem" mapFieldToSemanticObject="false"></smartLink:SmartLink>
+</core:FragmentDefinition>

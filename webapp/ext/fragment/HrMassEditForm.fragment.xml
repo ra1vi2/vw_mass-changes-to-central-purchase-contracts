@@ -1,0 +1,316 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="HrMassEditFormFragment" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:smartform="sap.ui.comp.smartform" displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:smartmultiedit="sap.ui.comp.smartmultiedit" xmlns:smartField="sap.ui.comp.smartfield" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" height="100%"
+		xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" >
+	<Dialog id="HrMassEditForm" title="{@i18n>MassEditFormText}" class="sapUiPopupWithPadding" resizable="true" contentWidth="600px"
+		afterOpen="massEditScrollToTop">
+		<content id="CentralPurchaseContractContent">
+		<VBox id="affectedDocsVbox" class="sapUiSmallMarginBegin sapUiSmallMarginEnd">
+				<Title id="AffectedDocumentsTitle" text="{@i18n>ToBeAffectedDocuments}" class="sapUiSmallMarginTop sapUiSmallMarginBottom"/>
+				<HBox id="AffectedDocumentsHBox" wrap="Wrap">
+					<VBox id="AffectedDocumentsVBox" class="sapUiLargeMarginEnd">
+						<Label id="HeadersAffectedLabel" text="{@i18n>CentralHierarchyContractHeaders}" labelFor="SelectedHCTRCount"/>
+						<Text id="SelectedHCTRCount"/>
+					</VBox>
+					<VBox id="AffectedItemsTitleVBox">
+						<Label id="AffectedItemsTitleLabel" text="{@i18n>CentralHierarchyContractItems}" labelFor="selectedHCTRItemCount"/>
+						<Text id="selectedHCTRItemCount"/>
+					</VBox>
+				</HBox>
+			</VBox>
+			<!--<smartmultiedit:Container entitySet="C_PurCntrlContrItmMassUpdt" id="multiEditContainer-item">-->
+			<smartmultiedit:Container entitySet="C_CntrlPurContrHierItmMassUpdt" id="multiEditContainer-item">
+				<smartmultiedit:layout id="multiEditContainer-itemLayout">
+					<smartform:SmartForm editable="true" id="HrMassEditForm-item">
+						<smartform:groups id="MassEditForm-itemGroups">
+							<smartform:Group id="HeaderFieldsGroup" label="{@i18n>headerFields}" visible="false">
+								<smartform:GroupElement id="ValidityEndDate-Group">
+									<smartform:elements id="ValidityEndDateFldElements">
+										<smartmultiedit:Field propertyName="ValidityEndDate" change="onHCtrSmartFormCheck" id="ValidityEndDateFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="TargetAmount-Group">
+									<smartform:elements id="TargetAmountFldElements">
+										<smartmultiedit:Field propertyName="PurchaseContractTargetAmount" change="onHCtrSmartFormCheck" id="TargetAmountFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="PaymentTerms-Group">
+									<smartform:elements id="PaymentTermsFldElements">
+										<smartmultiedit:Field propertyName="PaymentTerms" change="onHCtrSmartFormCheck" id="PaymentTermsFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="CashDiscount1Days-Group">
+									<smartform:elements id="CashDiscount1DaysFldElements">
+										<smartmultiedit:Field propertyName="CashDiscount1Days" change="onHCtrSmartFormCheck" id="CashDiscount1DaysFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="CashDiscount1Percent-Group">
+									<smartform:elements id="CashDiscount1PercentFldElements">
+										<smartmultiedit:Field propertyName="CashDiscount1Percent" change="onHCtrSmartFormCheck" id="CashDiscount1PercentFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="CashDiscount2Days-Group">
+									<smartform:elements id="CashDiscount2DaysFldElements">
+										<smartmultiedit:Field propertyName="CashDiscount2Days" change="onHCtrSmartFormCheck" id="CashDiscount2DaysFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="CashDiscount2Percent-Group">
+									<smartform:elements id="CashDiscount2PercentFldElements">
+										<smartmultiedit:Field propertyName="CashDiscount2Percent" change="onHCtrSmartFormCheck" id="CashDiscount2PercentFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="NetPaymentDays-Group">
+									<smartform:elements id="NetPaymentDaysFldElements">
+										<smartmultiedit:Field propertyName="NetPaymentDays" change="onHCtrSmartFormCheck" id="NetPaymentDaysFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="IncotermsClassification-Group">
+									<smartform:elements id="IncotermsClassificationFldElements">
+										<smartmultiedit:Field propertyName="IncotermsClassification" change="onHCtrSmartFormCheck" id="IncotermsClassificationFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="IncotermsLocation1-Group">
+									<smartform:elements id="IncotermsLocation1FldElements">
+										<smartmultiedit:Field propertyName="IncotermsLocation1" change="onHCtrSmartFormCheck" id="IncotermsLocation1Fld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="IncotermsLocation2-Group">
+									<smartform:elements id="IncotermsLocation2FldElements">
+										<smartmultiedit:Field propertyName="IncotermsLocation2" change="onHCtrSmartFormCheck" id="IncotermsLocation2Fld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="IncotermsVersion-Group">
+									<smartform:elements id="IncotermsVersionFldElements">
+										<smartmultiedit:Field propertyName="IncotermsVersion" change="onHCtrSmartFormCheck" id="IncotermsVersionFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="PurchasingGroup-Group">
+									<smartform:elements id="PurchasingGroupFldElements">
+										<smartmultiedit:Field propertyName="PurchasingGroup" change="onHCtrSmartFormCheck" id="PurchasingGroupFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="QuotationSubmissionDate-Group">
+									<smartform:elements id="QuotationSubmissionDateFldElements">
+										<smartmultiedit:Field propertyName="QuotationSubmissionDate" change="onHCtrSmartFormCheck" id="QuotationSubmissionDateFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="SupplierQuotation-Group">
+									<smartform:elements id="SupplierQuotationFldElements">
+										<smartmultiedit:Field propertyName="SupplierQuotation" change="onHCtrSmartFormCheck" id="SupplierQuotationFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="CorrespncExternalReference-Group">
+									<smartform:elements id="CorrespncExternalReferenceFldElements">
+										<smartmultiedit:Field propertyName="CorrespncExternalReference" change="onHCtrSmartFormCheck" id="CorrespncExternalReferenceFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="CorrespncInternalReference-Group">
+									<smartform:elements id="CorrespncInternalReferenceFldElements">
+										<smartmultiedit:Field propertyName="CorrespncInternalReference" change="onHCtrSmartFormCheck" id="CorrespncInternalReferenceFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="SalesPersonName-Group">
+									<smartform:elements id="SalesPersonNameFldElements">
+										<smartmultiedit:Field propertyName="SupplierRespSalesPersonName" change="onHCtrSmartFormCheck" id="SalesPersonNameFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="SupplierPhoneNumber-Group">
+									<smartform:elements id="SupplierPhoneNumberFldElements">
+										<smartmultiedit:Field propertyName="SupplierPhoneNumber" change="onHCtrSmartFormCheck" id="SupplierPhoneNumberFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+							</smartform:Group>
+						</smartform:groups>
+							<smartform:groups>
+							<smartform:Group id="HeaderDistFieldsGroup2" label="{@i18n>headerDistFields}" visible="false">
+								<smartform:GroupElement id="HeaderDistFieldcount-Group">
+									<smartform:elements id="HeaderDistFieldcountElements">
+										 <Label id="HeaderDistFieldcountLabel" text="{@i18n>AffectedDistributionItems}" labelFor="HeaderDistFieldcount"/>
+										 <Text id="HeaderDistFieldcount"/> 
+										 </smartform:elements>
+								</smartform:GroupElement>
+								
+								<smartform:GroupElement id="DistributionPct-Group" >
+									<smartform:elements id="DistributionPctFldElements">
+										<smartmultiedit:Field propertyName="CntrlPurContrDistributionPct" change="onHCtrSmartFormCheck" id="DistributionPctFld" />
+									</smartform:elements>
+								</smartform:GroupElement>
+							</smartform:Group>
+						</smartform:groups>
+						<smartform:groups id="SmartFormItemFieldsGroups">
+							<smartform:Group id="ItemFieldsGroup" label="{@i18n>ItemFields}" visible="false">
+								<smartform:GroupElement id="MaterialDescription-Group">
+									<smartform:elements id="MaterialDescriptionFldElements">
+										<smartmultiedit:Field propertyName="MaterialDescription" change="onHCtrSmartFormCheck" id="MaterialDescriptionFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="TargetQuantity-Group">
+									<smartform:elements id="TargetQuantityFldElements">
+										<smartmultiedit:Field propertyName="TargetQuantity" change="onHCtrSmartFormCheck" id="TargetQuantityFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="ReleaseOrderQuantity-Group">
+									<smartform:elements id="ReleaseOrderQuantityFldElements">
+										<smartmultiedit:Field propertyName="PurgDocReleaseOrderQuantity" change="onHCtrSmartFormCheck" id="ReleaseOrderQuantityFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="NoDaysReminder1-Group">
+									<smartform:elements id="NoDaysReminder1FldElements">
+										<smartmultiedit:Field propertyName="NoDaysReminder1" change="onHCtrSmartFormCheck" id="NoDaysReminder1Fld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="NoDaysReminder2-Group">
+									<smartform:elements id="NoDaysReminder2FldElements">
+										<smartmultiedit:Field propertyName="NoDaysReminder2" change="onHCtrSmartFormCheck" id="NoDaysReminder2Fld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="NoDaysReminder3-Group">
+									<smartform:elements id="NoDaysReminder3FldElements">
+										<smartmultiedit:Field propertyName="NoDaysReminder3" change="onHCtrSmartFormCheck" id="NoDaysReminder3Fld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="ConfirmationControlKey-Group">
+									<smartform:elements id="ConfirmationControlKeyFldElements">
+										<smartmultiedit:Field propertyName="SupplierConfirmationControlKey" change="onHCtrSmartFormCheck" id="ConfirmationControlKeyFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="OrderAcknNumber-Group">
+									<smartform:elements id="OrderAcknNumberFldElements">
+										<smartmultiedit:Field propertyName="PurgDocOrderAcknNumber" change="onHCtrSmartFormCheck" id="OrderAcknNumberFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="RequirementTracking-Group">
+									<smartform:elements id="RequirementTrackingFldElements">
+										<smartmultiedit:Field propertyName="RequirementTracking" change="onHCtrSmartFormCheck" id="RequirementTrackingFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="SupplierMaterialNumber-Group">
+									<smartform:elements id="SupplierMaterialNumberFldElements">
+										<smartmultiedit:Field propertyName="SupplierMaterialNumber" change="onHCtrSmartFormCheck" id="SupplierMaterialNumberFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="IsOrderAcknRqd-Group">
+									<smartform:elements id="IsOrderAcknRqdFldElements">
+										<smartmultiedit:Field propertyName="IsOrderAcknRqd" change="onHCtrSmartFormCheck" id="IsOrderAcknRqdFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="PurchasingPriceIsEstimated-Group">
+									<smartform:elements id="PurchasingPriceIsEstimatedFldElements">
+										<smartmultiedit:Field propertyName="PurchasingPriceIsEstimated" change="onHCtrSmartFormCheck" id="PurchasingPriceIsEstimatedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="PriceIsToBePrinted-Group">
+									<smartform:elements id="PriceIsToBePrintedFldElements">
+										<smartmultiedit:Field propertyName="PriceIsToBePrinted" change="onHCtrSmartFormCheck" id="PriceIsToBePrintedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="UnderdelivTolrtdLmtRatioInPct-Group">
+									<smartform:elements id="UnderdelivTolrtdLmtRatioInPctFldElements">
+										<smartmultiedit:Field propertyName="UnderdelivTolrtdLmtRatioInPct" change="onHCtrSmartFormCheck" id="UnderdelivTolrtdLmtRatioInPctFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="OverdelivTolrtdLmtRatioInPct-Group">
+									<smartform:elements id="OverdelivTolrtdLmtRatioInPctFldElements">
+										<smartmultiedit:Field propertyName="OverdelivTolrtdLmtRatioInPct" change="onHCtrSmartFormCheck" id="OverdelivTolrtdLmtRatioInPctFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="UnlimitedOverdeliveryIsAllowed-Group">
+									<smartform:elements id="UnlimitedOverdeliveryIsAllowedFldElements">
+										<smartmultiedit:Field propertyName="UnlimitedOverdeliveryIsAllowed" change="onHCtrSmartFormCheck" id="UnlimitedOverdeliveryIsAllowedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="StockType-Group">
+									<smartform:elements id="StockTypeFldElements">
+										<smartmultiedit:Field propertyName="StockType" change="onHCtrSmartFormCheck" id="StockTypeFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="TaxCode-Group">
+									<smartform:elements id="StockTypeFldElements">
+										<smartmultiedit:Field propertyName="TaxCode" change="onHCtrSmartFormCheck" id="TaxCodeFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="ShippingInstruction-Group">
+									<smartform:elements id="ShippingInstructionFldElements">
+										<smartmultiedit:Field propertyName="ShippingInstruction" change="onHCtrSmartFormCheck" id="ShippingInstructionFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="IsInfoAtRegistration-Group">
+									<smartform:elements id="IsInfoAtRegistrationFldElements">
+										<smartmultiedit:Field propertyName="IsInfoAtRegistration" change="onHCtrSmartFormCheck" id="IsInfoAtRegistrationFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="GoodsReceiptIsExpected-Group">
+									<smartform:elements id="GoodsReceiptIsExpectedFldElements">
+										<smartmultiedit:Field propertyName="GoodsReceiptIsExpected" change="onHCtrSmartFormCheck" id="GoodsReceiptIsExpectedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="GoodsReceiptIsNonValuated-Group">
+									<smartform:elements id="GoodsReceiptIsNonValuatedFldElements">
+										<smartmultiedit:Field propertyName="GoodsReceiptIsNonValuated" change="onHCtrSmartFormCheck" id="GoodsReceiptIsNonValuatedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="InvoiceIsExpected-Group">
+									<smartform:elements id="InvoiceIsExpectedFldElements">
+										<smartmultiedit:Field propertyName="InvoiceIsExpected" change="onHCtrSmartFormCheck" id="InvoiceIsExpectedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="InvoiceIsGoodsReceiptBased-Group">
+									<smartform:elements id="InvoiceIsGoodsReceiptBasedFldElements">
+										<smartmultiedit:Field propertyName="InvoiceIsGoodsReceiptBased" change="onHCtrSmartFormCheck" id="InvoiceIsGoodsReceiptBasedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="EvaldRcptSettlmtIsAllowed-Group">
+									<smartform:elements id="EvaldRcptSettlmtIsAllowedFldElements">
+										<smartmultiedit:Field propertyName="EvaldRcptSettlmtIsAllowed" change="onHCtrSmartFormCheck" id="EvaldRcptSettlmtIsAllowedFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+							</smartform:Group>
+						</smartform:groups>
+					<smartform:groups>
+							<smartform:Group id="ItemDistFieldsGroup" label="{@i18n>itemDistFields}" visible="false">
+									<smartform:GroupElement id="ItemDistFieldcount-Group">
+									<smartform:elements id="ItemDistFieldcountElements">
+										 <Label id="ItemDistFieldcountLabel" text="{@i18n>AffectedDistributionItems}" labelFor="ItemDistFieldcount"/>
+										 <Text id="ItemDistFieldcount"/> 
+										 </smartform:elements>
+								</smartform:GroupElement>
+								<smartform:GroupElement id="ItemDistributionPct-Group">
+									<smartform:elements id="ItemDistributionPctFldElements">
+										<smartmultiedit:Field propertyName="CntrlPurContrItmDistrPct" change="onHCtrSmartFormCheck" id="ItemDistributionPctFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+							</smartform:Group>
+						</smartform:groups>
+							<smartform:groups>
+							<smartform:Group id="VersioningFields" label="{@i18n>VersioningFields}" visible="true">
+								<smartform:GroupElement id="PurchasingDocVersionReasonCode-Group">
+									<smartform:elements id="PurchasingDocVersionReasonCodeFldElements">
+										<smartmultiedit:Field propertyName="PurchasingDocVersionReasonCode" change="onHCtrSmartFormCheck" id="PurchasingDocVersionReasonCodeFld"/>
+									</smartform:elements>
+								</smartform:GroupElement>
+									<smartform:GroupElement id="PurgDocNoteText-Group">
+									<smartform:elements id="PurgDocNoteTextFldElements">
+										<smartmultiedit:Field propertyName="PurgDocNoteText" change="onHCtrSmartFormCheck" id="PurgDocNoteTextFld" />
+									</smartform:elements>
+								</smartform:GroupElement>
+							</smartform:Group>
+						</smartform:groups>
+					</smartform:SmartForm>
+				</smartmultiedit:layout>
+			</smartmultiedit:Container>
+			</content>	
+		<buttons id="MassEditFormButtons">
+			<Button type="Emphasized" text="{@i18n>applyChangesButtonText}" press="onPressHCTRApplyChangesButton" id="applyChangesButton" enabled="false"></Button>
+			<Button text="{@i18n>simulateJobButtonText}" press="onPressHCTRApplyChangesButton" id="simulateJobButton" enabled="false"></Button>
+			<Button text="{@i18n>cancelButtonText}" press="onPressHCTRCancelButton" id="cancelButton"></Button>
+			<Button text="{@i18n>restoreButtonText}" press="onPressHCTRRestoreButton" id="restoreButton" enabled="false"></Button>
+		</buttons>
+	
+	</Dialog>
+</core:FragmentDefinition>

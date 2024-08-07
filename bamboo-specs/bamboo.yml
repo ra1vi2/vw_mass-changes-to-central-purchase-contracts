@@ -1,0 +1,56 @@
+---
+version: 2
+plan:
+  project-key: BAM
+  key: TES
+  name: TestBamboo
+stages:
+- Default Stage:
+    manual: false
+    final: false
+    jobs:
+    - Default Job
+Default Job:
+  key: JOB1
+  tasks:
+  - checkout:
+      force-clean-build: 'true'
+      description: Checkout Default Repository
+  - any-task:
+      plugin-key: org.jfrog.bamboo.bamboo-artifactory-plugin:artifactoryNpmTask
+      configuration: {}
+      description: Dependecy download
+  artifact-subscriptions: []
+repositories:
+- mass change to central contract:
+    scope: global
+triggers:
+- remote:
+    description: remote trigger
+branches:
+  create: manually
+  delete: never
+  link-to-jira: true
+notifications: []
+labels: []
+dependencies:
+  require-all-stages-passing: false
+  enabled-for-branches: true
+  block-strategy: none
+  plans: []
+other:
+  concurrent-build-plugin: system-default
+---
+version: 2
+plan:
+  key: BAM-TES
+plan-permissions:
+- users:
+  - viugzkp
+  permissions:
+  - view
+  - edit
+  - build
+  - clone
+  - admin
+...
